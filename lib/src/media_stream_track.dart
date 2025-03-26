@@ -1,5 +1,7 @@
 import 'dart:typed_data';
 
+import '../webrtc_interface.dart';
+
 typedef StreamTrackCallback = Function();
 
 abstract class MediaStreamTrack {
@@ -95,6 +97,11 @@ abstract class MediaStreamTrack {
   Future<ByteBuffer> captureFrame() {
     throw UnimplementedError();
   }
+  
+    Future<FrameData> captureFrameInMemory() {
+    throw UnimplementedError();
+  }
+  
 
   Future<bool> hasTorch() {
     throw UnimplementedError();
